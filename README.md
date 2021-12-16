@@ -57,9 +57,9 @@ Instructions to successfully do Jailbreak and install KODI 14.2 (tested on ATV2)
 - Open a new tab on terminal and drag your folder and press enter
 - Drag and drop "org.xbmc.kodi-atv2_14.2-0_iphoneos-arm.deb" feel free to rename it so it's easier to type it.
 - Type: dpkg-deb -R nameOfThePackage.deb nameofTheFolder
-- This will decompress the .deb package. Open the file control, and remove the dependencies that you don't want from the line dependencies. Make sure you leave the commas, and don't mess up with the file.
-- Now you will rebuild the package with dpkg-deb -Zgzip --build nameOfThePackage (-Zgzip makes it heavier but ATV2 will be able to read it)
-- Transfer the package with filezilla and install like the others
+- This will decompress the .deb package. Open the file control, and remove the dependencies that you don't want from the line dependencies. Make sure you leave the commas, and don't mess up with the file. Save.
+- Now you will rebuild the package. Type in terminal: dpkg-deb -Zgzip --build nameOfThePackage (-Zgzip makes it heavier but ATV2 will be able to read it)
+- Transfer the package with Filezilla and install like the others
 - In case you don't see the icons, killall AppleTV or reboot
 - ENJOY
 
