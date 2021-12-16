@@ -29,7 +29,7 @@ Make sure your device is connected to the internet for the first boot. Do not tu
 ## DEC 2021 UPDATE:
 Josh.tv, joshtv.net and awkardtv.org repositories are down creating several issues when installing.
 
-Instructions to successfully do Jailbreak and install KODI 14.2 MANUALLY (tested on ATV2):
+Instructions to successfully do Jailbreak and install KODI 14.2 manually (tested on ATV2):
 
 ### Jailbreaking
 - Put Apple TV in DFU Mode
