@@ -1,4 +1,3 @@
-
 # Blackb0x
  Apple TV 2/3 Jailbreak [Download here](https://github.com/NSSpiral/Blackb0x/releases)
 
@@ -26,6 +25,44 @@ Make sure your device is connected to the internet for the first boot. Do not tu
 5. Once Jailbreak has finished installing connect to your tv and wait 5-10 minutes until Kodi appears (Be patient, go have a coffee).
 
 <br>
+
+## DEC 2021 UPDATE:
+Josh.tv, joshtv.net and awkardtv.org repositories are down creating several issues when installing.
+
+Instructions to successfully do Jailbreak and install KODI 14.2 (tested on ATV2):
+
+### Jailbreaking
+- Put Apple TV in DFU Mode
+- Jailbreak with Blackb0x (Blackb0x crashes after reboot)
+- In case of tethered jailbreak, put Apple TV in DFU Mode again so you can open Blackb0x and press "Tethered Boot"
+
+### Getting the DEB's
+- Download KODI 14.2 from http://mirrors.kodi.tv/apt/atv2/deb/org.xbmc.kodi-atv2_14.2-0_iphoneos-arm.deb to your computer.
+- Download Blackb0x source code (zip, not the app)
+- Go to Blackb0x-main/Blackb0x/Files
+- Decompress Debs.tar (The Unarchiver/Keka will do the job if your Mac can't)
+- Locate (com.nito.updatebegone_0.2-1_iphoneos-arm.deb), and (beigelist_2.2.6-30_iphoneos-arm.deb)
+
+### Transfering and installing the DEB's
+- Download Filezilla. Put your host, username: root, password: alpine, and port 22 (SSH)
+- Transfer the 3 deb packages to your Apple TV root folder.
+- Connect trough SSH to your Apple TV, but this time from the terminal. (ssh root@192.x.x.x)
+- Type: ls .You will see the name of every package you transferred.
+- Install the DEB's "beigelist.." and "com.nito.updatebegone..." (dpkg --install nameOfThePackage.deb) for each one.
+- Now, install "org.xbmc.kodi-atv2_14.2-0_iphoneos-arm.deb" the same way. 
+- If there's an error of missing dependencies (I did not tried to install it in this order) you should do the following:
+
+### Fixing missing dependencies
+- Create an empty folder in your computer
+- Open a new tab on terminal and drag your folder and press enter
+- Drag and drop "org.xbmc.kodi-atv2_14.2-0_iphoneos-arm.deb" feel free to rename it so it's easier to type it.
+- Type: dpkg-deb -R nameOfThePackage.deb nameofTheFolder
+- This will decompress the .deb package. Open the file control, and remove the dependencies that you don't want from the line dependencies. Make sure you leave the commas, and don't mess up with the file.
+- Now you will rebuild the package with dpkg-deb -Zgzip --build nameOfThePackage (-Zgzip makes it heavier but ATV2 will be able to read it)
+- Transfer the package with filezilla and install like the others
+- In case you don't see the icons, killall AppleTV or reboot
+- ENJOY
+
 
 ## Credits
 **nyan_satan**
